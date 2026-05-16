@@ -11,8 +11,8 @@ import {
   Download
 } from 'lucide-react';
 
-// API Key injetada pelo ambiente do Canvas
-const apiKey = "";
+// API Key injetada pelo ambiente do Hub
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
 
 const DEFAULT_FORM_DATA = {
   clientName: 'Odontologia Moraes',

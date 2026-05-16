@@ -17,7 +17,7 @@ import {
   Trophy
 } from 'lucide-react';
 
-const apiKey = ""; // Injetada pelo ambiente
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
 
 const DEFAULT_SCRIPT = 'Olá. Esta é uma narração profissional criada no Voice Studio. Use frases curtas, pausas estratégicas e uma mensagem clara para gerar mais presença e compreensão.';
 

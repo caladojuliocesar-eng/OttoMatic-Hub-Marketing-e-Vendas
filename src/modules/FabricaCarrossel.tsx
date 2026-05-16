@@ -2051,7 +2051,7 @@ export default function App() {
   const generateImageWithAI = async (index: number, prompt: string) => {
     setLoadingImages(prev => ({ ...prev, [index]: true }));
     try {
-      const apiKey = "";
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
       const url = `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`;
       const payload = { instances: { prompt: prompt + " -- editorial photography, premium, no text, 4:5 ratio" }, parameters: { sampleCount: 1, aspectRatio: "4:5" } };
       const response = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
@@ -2085,7 +2085,7 @@ export default function App() {
 
   // ── LLM CALL ──
   const callAgent = async (instruction: string, prompt: string, schema: any = null, useSearch = false) => {
-    const apiKey = "";
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
     const payload: any = {
       contents: [{ parts: [{ text: prompt }] }],
