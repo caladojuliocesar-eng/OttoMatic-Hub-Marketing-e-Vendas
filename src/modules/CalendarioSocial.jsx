@@ -1065,7 +1065,7 @@ export default function App() {
     const [db, setDb] = useState(null);
     const [activeModal, setActiveModal] = useState(null);
     const [toasts, setToasts] = useState([]);
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
     const [syncMode, setSyncMode] = useState('firestore');
     const [isLoadingPosts, setIsLoadingPosts] = useState(true);
 

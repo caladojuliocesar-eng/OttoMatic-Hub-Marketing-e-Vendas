@@ -2336,7 +2336,7 @@ Retorne o JSON final completo.`;
           min-height:100vh; font-family:"Plus Jakarta Sans","Avenir Next","Segoe UI",sans-serif; color:#1e1a16;
           -webkit-tap-highlight-color: transparent;
         }
-        .root { width:100vw; height:100vh; display:grid; grid-template-rows: 52px 1fr 120px; grid-template-columns: 260px 1fr 300px; background:rgba(255,255,255,0.78); backdrop-filter:blur(10px); overflow:hidden; animation:rise 0.6s ease both; }
+        .root { width:100%; height:100%; position:absolute; inset:0; display:grid; grid-template-rows: 52px 1fr 120px; grid-template-columns: 260px 1fr 300px; background:rgba(255,255,255,0.78); backdrop-filter:blur(10px); overflow:hidden; animation:rise 0.6s ease both; }
         @keyframes rise { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
         @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }

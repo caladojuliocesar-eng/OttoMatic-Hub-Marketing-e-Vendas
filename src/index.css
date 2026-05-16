@@ -266,7 +266,7 @@ body {
 }
 
 .main-header {
-  padding: 16px 24px;
+  padding: 10px 20px;
   border-bottom: 1px solid var(--hub-border);
   display: flex;
   align-items: center;
@@ -279,7 +279,7 @@ body {
 .main-header-left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .main-header-breadcrumb {
@@ -289,17 +289,17 @@ body {
 }
 
 .main-header-breadcrumb .module-icon {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .main-header-breadcrumb h2 {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--hub-text-primary);
 }
 
 .main-header-breadcrumb p {
-  font-size: 12px;
+  font-size: 10px;
   color: var(--hub-text-secondary);
 }
 
