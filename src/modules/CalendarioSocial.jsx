@@ -1095,6 +1095,21 @@ export default function App() {
     }, []);
 
     useEffect(() => {
+        if (typeof document !== 'undefined') {
+            if (darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        return () => {
+            if (typeof document !== 'undefined') {
+                document.documentElement.classList.remove('dark');
+            }
+        };
+    }, [darkMode]);
+
+    useEffect(() => {
         if (typeof window === 'undefined') return;
         try {
             window.localStorage.setItem(STORAGE_KEY, JSON.stringify(flattenPosts(posts)));
