@@ -302,7 +302,7 @@ const App = () => {
   };
 
   return (
-    <div className="absolute inset-0 bg-neutral-950 text-neutral-100 font-sans flex flex-col overflow-hidden">
+    <div className="w-full h-full bg-neutral-950 text-neutral-100 font-sans flex flex-col rounded-2xl border border-neutral-900 shadow-2xl overflow-hidden relative">
       {/* Background visual */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[95%] h-[50%] bg-indigo-600/5 blur-[160px] rounded-full" />

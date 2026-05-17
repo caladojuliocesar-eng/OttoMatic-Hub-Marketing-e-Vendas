@@ -1223,7 +1223,7 @@ export default function App() {
     };
 
     return (
-        <div className={darkMode ? "dark" : ""}>
+        <div className={`w-full h-full rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl relative ${darkMode ? "dark" : ""}`}>
             <div className="absolute inset-0 bg-gray-50 font-sans text-gray-900 selection:bg-emerald-100 selection:text-emerald-900 dark:bg-gray-900 dark:text-gray-100 dark:selection:bg-emerald-900 dark:selection:text-emerald-100 transition-colors duration-300 overflow-y-auto">
                 <nav className="bg-white border-b border-gray-200 sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 dark:border-gray-800 transition-colors duration-300">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

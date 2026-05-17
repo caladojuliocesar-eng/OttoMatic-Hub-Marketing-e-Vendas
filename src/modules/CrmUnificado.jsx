@@ -725,31 +725,31 @@ export default function CRMApp() {
   }, [leads, searchTerm, typeFilter]);
 
   return (
-    <div className="absolute inset-0 bg-slate-950 text-slate-200 font-sans p-6 overflow-y-auto">
-      <header className="mb-8 border-b border-slate-800 pb-6 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+    <div className="w-full h-full bg-slate-950 text-slate-200 font-sans p-5 rounded-2xl border border-slate-800/80 shadow-2xl flex flex-col overflow-hidden">
+      <header className="mb-4 border-b border-slate-800 pb-4 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center shrink-0">
         <div>
-          <h1 className="text-3xl font-bold text-white flex items-center gap-3">
-            <Target className="text-blue-400" />
+          <h1 className="text-2xl font-bold text-white flex items-center gap-2">
+            <Target className="text-blue-400" size={24} />
             ProspectAI <span className="text-slate-500 font-normal">| CRM de Prospecção</span>
           </h1>
-          <p className="text-slate-400 mt-1">Funil, dossiê comercial, propostas HTML e tutor de vendas com IA.</p>
+          <p className="text-slate-400 text-xs mt-0.5">Funil, dossiê comercial, propostas HTML e tutor de vendas com IA.</p>
         </div>
-        <div className="flex flex-wrap gap-4">
-          <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center min-w-[100px]">
-            <span className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Total</span>
-            <span className="text-2xl font-bold text-white mt-1">{stats.total}</span>
+        <div className="flex flex-wrap gap-2.5">
+          <div className="bg-slate-900/80 border border-slate-800 p-2.5 px-4 rounded-xl flex flex-col items-center min-w-[70px]">
+            <span className="text-slate-500 text-[10px] uppercase tracking-wider font-semibold">Total</span>
+            <span className="text-lg font-bold text-white mt-0.5">{stats.total}</span>
           </div>
-          <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center min-w-[100px]">
-            <span className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Radar</span>
-            <span className="text-2xl font-bold text-blue-400 mt-1">{stats.prospectar}</span>
+          <div className="bg-slate-900/80 border border-slate-800 p-2.5 px-4 rounded-xl flex flex-col items-center min-w-[70px]">
+            <span className="text-slate-500 text-[10px] uppercase tracking-wider font-semibold">Radar</span>
+            <span className="text-lg font-bold text-blue-400 mt-0.5">{stats.prospectar}</span>
           </div>
-          <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center min-w-[100px]">
-            <span className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Contato</span>
-            <span className="text-2xl font-bold text-yellow-400 mt-1">{stats.contato}</span>
+          <div className="bg-slate-900/80 border border-slate-800 p-2.5 px-4 rounded-xl flex flex-col items-center min-w-[70px]">
+            <span className="text-slate-500 text-[10px] uppercase tracking-wider font-semibold">Contato</span>
+            <span className="text-lg font-bold text-yellow-400 mt-0.5">{stats.contato}</span>
           </div>
-          <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col items-center min-w-[100px]">
-            <span className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Fechados</span>
-            <span className="text-2xl font-bold text-green-400 mt-1">{stats.fechado}</span>
+          <div className="bg-slate-900/80 border border-slate-800 p-2.5 px-4 rounded-xl flex flex-col items-center min-w-[70px]">
+            <span className="text-slate-500 text-[10px] uppercase tracking-wider font-semibold">Fechados</span>
+            <span className="text-lg font-bold text-green-400 mt-0.5">{stats.fechado}</span>
           </div>
         </div>
       </header>
@@ -761,14 +761,14 @@ export default function CRMApp() {
         </div>
       )}
 
-      <div className="mb-5 flex flex-col xl:flex-row gap-3 justify-between">
-        <div className="relative w-full lg:max-w-xl">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" size={18} />
+      <div className="mb-4 flex flex-col xl:flex-row gap-3 justify-between shrink-0">
+        <div className="relative w-full lg:max-w-md">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" size={16} />
           <input
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Buscar por lead, nicho, contato ou dor..."
-            className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500"
+            className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
           />
         </div>
         <div className="flex flex-wrap gap-2">
@@ -780,68 +780,68 @@ export default function CRMApp() {
             <button
               key={option.id}
               onClick={() => setTypeFilter(option.id)}
-              className={`px-4 py-2 rounded-xl border text-sm font-semibold transition-colors ${typeFilter === option.id ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'}`}
+              className={`px-3 py-1.5 rounded-xl border text-xs font-semibold transition-colors ${typeFilter === option.id ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'}`}
             >
               {option.label}
             </button>
           ))}
-          <div className="px-4 py-2 rounded-xl border border-slate-800 bg-slate-900 text-xs font-semibold text-slate-400 flex items-center">
+          <div className="px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-900 text-[10px] font-semibold text-slate-400 flex items-center">
             {loadingLeads ? 'Sincronizando...' : syncMode === 'firestore' ? 'Firestore ativo' : 'Salvamento local'}
           </div>
           <button
             onClick={() => setIsNewLeadOpen(true)}
-            className="px-4 py-2 rounded-xl border border-blue-500 bg-blue-600 text-white text-sm font-semibold hover:bg-blue-500 transition-colors flex items-center gap-2"
+            className="px-3 py-1.5 rounded-xl border border-blue-500 bg-blue-600 text-white text-xs font-semibold hover:bg-blue-500 transition-colors flex items-center gap-1.5"
           >
-            <Plus size={16} />
+            <Plus size={14} />
             Novo Lead
           </button>
         </div>
       </div>
 
-      <div className="flex gap-6 overflow-x-auto pb-8 h-[calc(100vh-300px)] items-start">
+      <div className="flex-grow flex gap-4 overflow-x-auto pb-4 items-start custom-scrollbar h-full">
         {COLUMNS.map(column => (
-          <div key={column.id} className="min-w-[380px] w-[380px] flex flex-col bg-slate-900/50 rounded-2xl p-4 border border-slate-800 max-h-full">
-            <div className="flex justify-between items-center mb-4 px-2 shrink-0">
-              <h2 className="font-semibold text-slate-200 tracking-wide">{column.title}</h2>
-              <span className="bg-slate-800 text-slate-300 text-xs py-1 px-3 rounded-full font-bold">
+          <div key={column.id} className="min-w-[290px] w-[290px] flex flex-col bg-slate-900/40 rounded-xl p-3.5 border border-slate-800/80 max-h-full overflow-hidden">
+            <div className="flex justify-between items-center mb-3 px-1 shrink-0">
+              <h2 className="font-semibold text-xs text-slate-200 tracking-wide">{column.title}</h2>
+              <span className="bg-slate-800/80 text-slate-300 text-[10px] py-0.5 px-2 rounded-full font-bold">
                 {filteredLeads.filter(l => l.status === column.id).length}
               </span>
             </div>
 
-            <div className="flex flex-col gap-4 overflow-y-auto pr-2 custom-scrollbar flex-grow pb-4">
+            <div className="flex flex-col gap-3 overflow-y-auto pr-1.5 custom-scrollbar flex-grow pb-2">
               {filteredLeads.filter(l => l.status === column.id).map(lead => (
-                <div key={lead.id} className={`p-5 rounded-xl shadow-lg bg-slate-800 border border-slate-700 hover:border-slate-500 transition-all shrink-0 ${column.color.split(' ')[1]} ${column.color.split(' ')[2]}`}>
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="font-bold text-lg text-white leading-tight pr-4">{lead.name}</h3>
-                    <div className="p-2 bg-slate-900/50 rounded-lg shrink-0">
+                <div key={lead.id} className={`p-4 rounded-lg shadow-md bg-slate-800/80 border border-slate-700/60 hover:border-slate-500/80 transition-all shrink-0 ${column.color.split(' ')[1]} ${column.color.split(' ')[2]}`}>
+                  <div className="flex justify-between items-start mb-2.5">
+                    <h3 className="font-bold text-sm text-white leading-snug pr-3">{lead.name}</h3>
+                    <div className="p-1.5 bg-slate-900/50 rounded-md shrink-0">
                       {getIcon(lead.type)}
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 mb-3">
                     <button 
                       onClick={() => { setSelectedLead(lead); setActiveTab('dossie'); }}
-                      className="flex-1 flex items-center justify-center gap-1 bg-blue-600/20 text-blue-400 hover:bg-blue-600 hover:text-white px-2 py-2 rounded-lg text-xs font-semibold transition-all border border-blue-500/30"
+                      className="flex-1 flex items-center justify-center gap-1 bg-blue-600/15 text-blue-400 hover:bg-blue-600 hover:text-white px-1.5 py-1.5 rounded-md text-[10px] font-semibold transition-all border border-blue-500/20"
                     >
-                      <FileText size={14} /> Dossiê
+                      <FileText size={12} /> Dossiê
                     </button>
                     <button 
                       onClick={() => { setSelectedLead(lead); setActiveTab('ia'); }}
-                      className="flex-1 flex items-center justify-center gap-1 bg-purple-600/20 text-purple-400 hover:bg-purple-600 hover:text-white px-2 py-2 rounded-lg text-xs font-semibold transition-all border border-purple-500/30"
+                      className="flex-1 flex items-center justify-center gap-1 bg-purple-600/15 text-purple-400 hover:bg-purple-600 hover:text-white px-1.5 py-1.5 rounded-md text-[10px] font-semibold transition-all border border-purple-500/20"
                     >
-                      <Wand2 size={14} /> Proposta
+                      <Wand2 size={12} /> Proposta
                     </button>
                     <button 
                       onClick={() => { setSelectedLead(lead); setActiveTab('tutor'); }}
-                      className="w-full flex items-center justify-center gap-1 bg-amber-600/20 text-amber-400 hover:bg-amber-600 hover:text-white px-2 py-2 rounded-lg text-xs font-semibold transition-all border border-amber-500/30"
+                      className="w-full flex items-center justify-center gap-1 bg-amber-600/15 text-amber-400 hover:bg-amber-600 hover:text-white px-1.5 py-1.5 rounded-md text-[10px] font-semibold transition-all border border-amber-500/20"
                     >
-                      <BrainCircuit size={14} /> Tutor IA
+                      <BrainCircuit size={12} /> Tutor IA
                     </button>
                   </div>
 
-                  <div className="flex justify-between items-center mt-2 pt-4 border-t border-slate-700">
+                  <div className="flex justify-between items-center mt-2.5 pt-2.5 border-t border-slate-700/50">
                     <select 
-                      className="bg-slate-900 border border-slate-700 text-slate-300 text-xs rounded-lg px-2 py-2 outline-none focus:border-blue-500 appearance-none cursor-pointer w-full"
+                      className="bg-slate-900/80 border border-slate-700/60 text-slate-300 text-[10px] rounded-md px-2 py-1.5 outline-none focus:border-blue-500 appearance-none cursor-pointer w-full text-center"
                       value={lead.status}
                       onChange={(e) => moveLead(lead.id, e.target.value)}
                     >

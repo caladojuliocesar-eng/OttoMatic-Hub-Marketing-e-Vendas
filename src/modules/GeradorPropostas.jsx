@@ -617,7 +617,7 @@ export default function App() {
   };
 
   return (
-    <div className="absolute inset-0 bg-slate-950 text-slate-200 flex flex-col md:flex-row font-sans overflow-hidden">
+    <div className="w-full h-full bg-slate-950 text-slate-200 flex flex-col md:flex-row font-sans rounded-2xl border border-slate-800 shadow-2xl overflow-hidden relative">
       {/* Sidebar Form */}
       <div className="w-full md:w-1/3 lg:w-[400px] bg-slate-900 border-r border-slate-800 p-6 flex flex-col h-full overflow-y-auto">
         <div className="flex items-center gap-3 mb-8 pb-6 border-b border-slate-800">
